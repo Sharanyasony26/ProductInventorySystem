@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 @ControllerAdvice
-@ResponseStatus
+//@ResponseStatus
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<ErrorMessage> productNotFoundException(ProductNotFoundException exception, WebRequest request){

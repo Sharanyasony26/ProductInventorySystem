@@ -42,4 +42,9 @@ public class ProductDaoImpl implements ProductDao{
     public List<Product> findByPriceRange(Double minPrice, Double maxPrice) {
         return productRepository.findByPriceRange(minPrice, maxPrice);
     }
+
+    @Override
+    public List<Product> saveAll(List<Product> product) {
+        return productRepository.saveAll(product);
+    }
 }

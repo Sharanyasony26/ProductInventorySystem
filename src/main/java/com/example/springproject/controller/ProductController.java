@@ -2,11 +2,8 @@ package com.example.springproject.controller;
 
 import com.example.springproject.entity.Product;
 import com.example.springproject.exception.ProductNotFoundException;
-import com.example.springproject.repository.ProductRepository;
 import com.example.springproject.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,17 +23,17 @@ public class ProductController {
         return service.saveProducts(products);
     }
         @GetMapping("/Products")
-        public List<Product> findAllEmployees() {
+        public List<Product> findAllProducts() {
             return service.getProducts();
         }
 
         @GetMapping("/ProductById/{id}")
-        public Product findEmployeeByEmpId(@PathVariable Long id) throws ProductNotFoundException {
+        public Product findProductById(@PathVariable Long id) throws ProductNotFoundException {
             return service.getProductById(id);
         }
        // @GetMapping("/ProductByName/{")
     @DeleteMapping("/deleteById/{id}")
-    public String deleteEmployee(@PathVariable Long id) {
+    public String deleteProduct(@PathVariable Long id) {
         return service.deleteProduct(id);
     }
     @PutMapping("/update")

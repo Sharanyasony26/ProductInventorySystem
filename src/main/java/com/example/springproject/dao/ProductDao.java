@@ -12,4 +12,6 @@ public interface ProductDao {
     void delete(Long id);
     List<Product> findByCategory(String category);
     List<Product> findByPriceRange(Double minPrice, Double maxPrice);
+
+    List<Product> saveAll(List<Product> products);
 }
